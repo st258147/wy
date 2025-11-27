@@ -1,34 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>校园论坛</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
-                500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a',
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <!-- React & ReactDOM & Router -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.development.js"></script>
-    <!-- Babel -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园论坛 - 离线版</title>
+    <!-- 引用本地样式表 -->
+    <link rel="stylesheet" href="./css/style.css">
 <script type="importmap">
 {
   "imports": {
@@ -41,10 +18,32 @@
 }
 </script>
 </head>
-<body class="bg-slate-50 text-slate-900">
-    <div id="root"></div>
-    
-    <!-- 引入主程序代码，类型设置为 text/babel -->
-    <script type="text/babel" src="./js/app.jsx"></script>
+<body>
+    <header>
+        <div class="container" style="height: 64px; display: flex; align-items: center; justify-content: space-between;">
+            <a href="#/" class="flex items-center gap-2" style="text-decoration: none; color: var(--brand-600);">
+                <!-- Logo Icon -->
+                <svg class="icon-lg" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span class="font-bold text-xl">校园论坛</span>
+            </a>
+            
+            <div id="navbar-actions" class="flex items-center gap-4">
+                <!-- Javascript 将在这里动态插入导航按钮 -->
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-2" style="padding-top: 2rem; padding-bottom: 2rem; min-height: 80vh;">
+        <div id="root">
+            <!-- 页面内容将通过 JS 渲染到这里 -->
+        </div>
+    </main>
+
+    <footer style="border-top: 1px solid var(--slate-200); padding: 1.5rem; text-align: center; color: var(--slate-500); background: white;">
+        &copy; 2024 校园论坛. 原生 PHP+JS 版.
+    </footer>
+
+    <!-- 引用本地逻辑脚本 -->
+    <script src="./js/app.js"></script>
 </body>
 </html>
